@@ -1,3 +1,4 @@
+vim.g.nord_italic = true
 vim.cmd.colorscheme 'nord' 
 -- This file is automatically loaded by plugins.core
 vim.g.mapleader = " "
