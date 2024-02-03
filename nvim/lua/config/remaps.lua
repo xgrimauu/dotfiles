@@ -18,3 +18,12 @@ map('n', '<leader><leader>', builtin.find_files, {})
 map('n', '<leader>fg', builtin.live_grep, {})
 map('n', '<leader>fb', builtin.buffers, {})
 map('n', '<leader>fh', builtin.help_tags, {})
+
+
+map({ "n", "v" }, "<leader>cf", function()
+      conform.format({
+        lsp_fallback = true,
+        async = false,
+        timeout_ms = 500,
+      })
+    end, { desc = "Format file or range (in visual mode)" })
