@@ -1,20 +1,27 @@
 return {
-  'stevearc/conform.nvim',
-  lazy = true,
-  cmd = "ConformInfo",
-  keys = {
-    {
-      "<leader>cf",
-      function()
-        require("conform").format({ formatters = { "injected" } })
-      end,
-      mode = { "n", "v" },
-      desc = "Format Injected Langs",
-    },
-  },
-  opts = {
-formatters_by_ft = { 
-                        lua = {"sylua"}
-                }
-        },
+	"stevearc/conform.nvim",
+	lazy = true,
+	event = { "BufReadPre", "BufNewFile" },
+	cmd = "ConformInfo",
+	config = function()
+		local conform = require("conform")
+
+		conform.setup({
+			formatters_by_ft = {
+				javascript = { "prettier" },
+				typescript = { "prettier" },
+				javascriptreact = { "prettier" },
+				typescriptreact = { "prettier" },
+				svelte = { "prettier" },
+				css = { "prettier" },
+				html = { "prettier" },
+				json = { "prettier" },
+				yaml = { "prettier" },
+				markdown = { "prettier" },
+				graphql = { "prettier" },
+				lua = { "stylua" },
+				python = { "isort", "black" },
+			},
+		})
+	end,
 }
