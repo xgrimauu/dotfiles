@@ -27,3 +27,5 @@ map({ "n", "v" }, "<leader>cf", function()
 		timeout_ms = 1500,
 	})
 end, { desc = "Format file or range (in visual mode)" })
+
+map({ "n", "v" }, "<leader>l", ":Lazy<CR>", { silent = true })
