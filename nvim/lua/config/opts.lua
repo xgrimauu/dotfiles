@@ -17,5 +17,8 @@ opt.number = true -- Print line number
 opt.list = true -- Show some invisible characters (tabs...
 opt.mouse = "a" -- Enable mouse mode
 opt.number = true -- Print line number
-opt.tabstop = 2 -- Number of spaces tabs count for
 opt.termguicolors = true -- True color support
+
+-- Tabs 4 spaces
+opt.tabstop = 4 -- Number of spaces tabs count for
+opt.shiftwidth = 4
