@@ -22,3 +22,6 @@ opt.termguicolors = true -- True color support
 -- Tabs 4 spaces
 opt.tabstop = 4 -- Number of spaces tabs count for
 opt.shiftwidth = 4
+
+
+ vim.wo.relativenumber = true
