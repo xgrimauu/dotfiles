@@ -2,7 +2,6 @@ return {
 	{ "williamboman/mason-lspconfig.nvim" },
 	{
 		"neovim/nvim-lspconfig",
-		event = "LazyFile",
 		dependencies = {
 			{ "folke/neoconf.nvim", cmd = "Neoconf", config = false, dependencies = { "nvim-lspconfig" } },
 			{ "folke/neodev.nvim", opts = {} },
@@ -90,10 +89,6 @@ return {
 			end
 
 			-- diagnostics
-			for name, icon in pairs(require("lazyvim.config").icons.diagnostics) do
-				name = "DiagnosticSign" .. name
-				vim.fn.sign_define(name, { text = icon, texthl = name, numhl = "" })
-			end
 			vim.diagnostic.config(vim.deepcopy(opts.diagnostics))
 
 			local servers = opts.servers
