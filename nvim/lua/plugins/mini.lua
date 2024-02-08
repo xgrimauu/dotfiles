@@ -1,5 +1,10 @@
+require("mini.ai").setup({})
+require("mini.pairs").setup({})
+
 return {
 	{ "echasnovski/mini.nvim", version = "*" },
+	{ "echasnovski/mini.pairs", version = "*" },
+	{ "echasnovski/mini.ai", version = "*" },
 	{
 		"echasnovski/mini.surround",
 		opts = {

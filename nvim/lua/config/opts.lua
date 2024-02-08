@@ -1,5 +1,4 @@
-vim.g.nord_italic = true
-vim.cmd.colorscheme 'nord' 
+vim.cmd.colorscheme("onenord")
 -- This file is automatically loaded by plugins.core
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
@@ -23,5 +22,4 @@ opt.termguicolors = true -- True color support
 opt.tabstop = 4 -- Number of spaces tabs count for
 opt.shiftwidth = 4
 
-
- vim.wo.relativenumber = true
+vim.wo.relativenumber = true
