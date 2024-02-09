@@ -29,3 +29,6 @@ map({ "n", "v" }, "<leader>cf", function()
 end, { desc = "Format file or range (in visual mode)" })
 
 map({ "n", "v" }, "<leader>l", ":Lazy<CR>", { silent = true })
+
+-- Java
+map({ "n", "v" }, "<leader>rj", ":w<CR> :! java % <CR>", { silent = true })
