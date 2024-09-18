@@ -15,6 +15,16 @@ alias lg='cd $(fd . ~/dev --max-depth 1 --type d | fzf) && lazygit'
 #key bindings
 bindkey -s "^f" 'cd $(fd . ~/dev --max-depth 1 --type d | fzf) && nvim .^M'
 
+
+alias work="timer 30m && terminal-notifier -message 'Pomodoro'\
+        -title 'Work Timer is up! Take a Break 😊'\
+        -sound Crystal"
+        
+alias rest="timer 5m && terminal-notifier -message 'Pomodoro'\
+        -title 'Break is over! Get back to work 😬'\
+        -sound Crystal"
+
+
 # Env
 export TESTCONTAINERS_DOCKER_SOCKET_OVERRIDE=/var/run/docker.sock
 export DOCKER_HOST="unix://${HOME}/.colima/docker.sock"
