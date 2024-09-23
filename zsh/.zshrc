@@ -18,11 +18,11 @@ bindkey -s "^f" 'cd $(fd . ~/dev --max-depth 1 --type d | fzf) && nvim .^M'
 
 alias work="timer 30m && terminal-notifier -message 'Pomodoro'\
         -title 'Work Timer is up! Take a Break 😊'\
-        -sound Crystal"
+        -sound Crystal && rest"
         
 alias rest="timer 5m && terminal-notifier -message 'Pomodoro'\
         -title 'Break is over! Get back to work 😬'\
-        -sound Crystal"
+        -sound Crystal && work"
 
 
 # Env
