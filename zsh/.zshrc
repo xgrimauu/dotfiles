@@ -1,5 +1,5 @@
 
-eval "$(oh-my-posh init zsh --config '~/.config/config.omp.json')"
+# Eval "$(oh-my-posh init zsh --config '~/.config/config.omp.json')"
 
 # Alias
 alias py=python3
@@ -12,24 +12,17 @@ alias lg=lazygit
 alias gg=lazygit
 alias src='source ~/.zshrc'
 alias lg='cd $(fd . ~/dev --max-depth 1 --type d | fzf) && lazygit'
+alias g='./gradlew'
 
 #key bindings
 bindkey -s "^f" 'cd $(fd . ~/dev --max-depth 1 --type d | fzf) && nvim .^M'
 
-
-alias work="timer 30m && terminal-notifier -message 'Pomodoro'\
-        -title 'Work Timer is up! Take a Break 😊'\
-        -sound Crystal && rest"
-        
-alias rest="timer 5m && terminal-notifier -message 'Pomodoro'\
-        -title 'Break is over! Get back to work 😬'\
-        -sound Crystal && work"
-
-
 # Env
 export TESTCONTAINERS_DOCKER_SOCKET_OVERRIDE=/var/run/docker.sock
-export DOCKER_HOST="unix://${HOME}/.colima/docker.sock"
+export DOCKER_HOST='unix:///home/xavi/.local/share/containers/podman/machine/qemu/podman.sock'
 export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:/home/$USER/bin
+##  export PATH=$PATH:~/.local/kitty.app/bin
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 # export SDKMAN_DIR="$HOME/.sdkman"
@@ -50,9 +43,9 @@ ZSH_THEME="random"
 
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
 
-# source $ZSH/oh-my-zsh.sh
+
+source ~/.zshrc.omp.config
 
 
 export EDITOR='nvim'
@@ -67,3 +60,10 @@ alias src='source ~/.zshrc'
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
