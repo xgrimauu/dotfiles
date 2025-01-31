@@ -1,6 +1,14 @@
 """ Map leader to space ---------------------
 let mapleader=" "
 
+nmap ciq ci"
+nmap diq di"
+nmap yiq yi"
+vmap ciq ci"
+
+Plug 'easymotion/vim-easymotion'
+Plug 'tpope/vim-surround'
+
 """ Plugins  --------------------------------
 set surround
 set multiple-cursors
@@ -10,6 +18,7 @@ set easymotion
 set textobj-entire
 set ReplaceWithRegister
 set relativenumber
+set number
 
 """ Plugin settings -------------------------
 let g:argtextobj_pairs="[:],(:),<:>"
@@ -33,20 +42,23 @@ map <leader>s <Action>(SelectInProjectView)
 map <leader>a <Action>(Annotate)
 map <leader>o <Action>(FileStructurePopup)
 map <leader>cf <Action>(ReformatCode)
+map <C-s> <Action>(ReformatCode)
 map <leader>e <Action>(ActivateProjectToolWindow)
-map <leader><leader> <Action>(GotoClass)
-map <leader>ff <Action>(GotoFile)
-map <leader>ga <Action>(GotoAction)
+map <leader><leader> <Action>(SearchEverywhere)
+map <leader>sc <Action>(GotoClass)
+map <leader>sf <Action>(GotoFile)
+map <leader>sa <Action>(GotoAction)
 map <leader>/ <Action>(FindInPath)
+map <leader>gm <Action>(FileStructurePopup)
 
 """ Window management
-map <leader>t <Action>(ActivateTerminalToolWindow)
+map <leader>tT <Action>(RunClass)
+map <leader>tt <Action>(RunClass)
 map <leader>hw <Action>(HideActiveWindow)
 
 map <leader>ca <Action>(ShowIntentionActions)
 map <C-j> <Action>(MethodDown)
 map <C-k> <Action>(MethodUp)
-map <Leader>rr <Action>(RunClass)
 
 """ Consistent bookmarking
 map <leader>1 <Action>(GotoBookmark1)
@@ -74,4 +86,11 @@ map <leader>m9 <Action>(ToggleBookmark9)
 map <leader>b <Action>(Back)
 map <leader><enter> <Action>(ShowIntentionActions)
 map <leader>i <Action>(ShowIntentionActions)
+map <leader> <Action>(Annotate)
+
+""" Git """
 map <leader>gg <Action>(Vcs.QuickListPopupAction)
+map <leader>gp <Action>(Git.Pull)
+map <leader>gb <Action>(Annotate)
+
+map gsa <Action>(SurroundWith)
