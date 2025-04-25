@@ -5,6 +5,10 @@ nmap ciq ci"
 nmap diq di"
 nmap yiq yi"
 vmap ciq ci"
+nmap ciq ci'
+nmap diq di'
+nmap yiq yi'
+vmap ciq ci'
 
 Plug 'easymotion/vim-easymotion'
 Plug 'tpope/vim-surround'
@@ -19,6 +23,7 @@ set textobj-entire
 set ReplaceWithRegister
 set relativenumber
 set number
+set clipboard+=unnamed
 
 """ Plugin settings -------------------------
 let g:argtextobj_pairs="[:],(:),<:>"
@@ -94,3 +99,4 @@ map <leader>gp <Action>(Git.Pull)
 map <leader>gb <Action>(Annotate)
 
 map gsa <Action>(SurroundWith)
+
